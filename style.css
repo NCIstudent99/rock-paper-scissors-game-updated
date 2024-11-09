@@ -1,12 +1,38 @@
 body {
     font-family: Arial, sans-serif;
-  }
-  
-  h1 {
+}
+
+h1 {
     color: #1e0000;
-  }
-  
-  .alert {
+}
+
+.alert {
     font-size: 18px;
-  }
-  
+}
+
+/* Styles for the score table */
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table thead {
+    background-color: #000000;
+    color: white;
+}
+
+.table td {
+    font-size: 1.2rem;
+    font-weight:lighter;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+/* Smaller screens */
+@media (max-width: 576px) {
+    .table th, .table td {
+        font-size: 1rem;
+    }
+}
