@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors Game</title>
-   <!--Font-Awesome-->
-   <script src="https://kit.fontawesome.com/0f0d843864.js" crossorigin="anonymous"></script>
+
+  <!-- Font-Awesome -->
+  <script src="https://kit.fontawesome.com/0f0d843864.js" crossorigin="anonymous"></script>
   <!-- Bootstrap 5.3.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <!-- Favicon links -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <!-- PNG favicons for various sizes -->
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon1.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon2.png">
-
 </head>
 <body class="text-center bg-light">
   <div class="container">
@@ -25,15 +23,15 @@
     <!-- Buttons -->
     <div class="row justify-content-center mb-4">
       <div class="col-4 col-md-3 col-lg-2">
-        <button class="btn btn-primary w-100 mb-2" onclick="playGame('rock')">
+        <button id="rockButton" class="btn btn-primary w-100 mb-2" onclick="playGame('rock')">
             <i class="fa-solid fa-hand-back-fist fa-bounce"></i>  Rock</button>
       </div>
       <div class="col-4 col-md-3 col-lg-2">
-        <button class="btn btn-success w-100 mb-2" onclick="playGame('paper')">
+        <button id="paperButton" class="btn btn-success w-100 mb-2" onclick="playGame('paper')">
             <i class="fa-solid fa-hand fa-bounce"></i>  Paper</button>
       </div>
       <div class="col-4 col-md-3 col-lg-2">
-        <button class="btn btn-danger w-100 mb-2" onclick="playGame('scissors')">
+        <button id="scissorsButton" class="btn btn-danger w-100 mb-2" onclick="playGame('scissors')">
             <i class="fa-solid fa-hand-scissors fa-bounce"></i>  Scissors</button>
       </div>
     </div>
@@ -41,6 +39,41 @@
     <!-- Result Display -->
     <div id="result" class="alert alert-info mt-4" role="alert">
       Make your choice to start the game!
+    </div>
+
+    <!-- Reset Button -->
+    <button id="resetButton" class="btn btn-warning mt-3" onclick="resetGame()" disabled>Reset Game</button>
+    
+    <!-- Score Display -->
+    <div id="score" class="mt-4">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Category</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wins</td>
+              <td id="wins">0</td>
+            </tr>
+            <tr>
+              <td>Losses</td>
+              <td id="losses">0</td>
+            </tr>
+            <tr>
+              <td>Ties</td>
+              <td id="ties">0</td>
+            </tr>
+            <tr>
+              <td>Rounds Played</td>
+              <td id="rounds">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
